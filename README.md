@@ -1,1 +1,2 @@
-# bodan-p2020-wordpress
+# Wordpress
+Thème pour site de rencontre pour le devoir wordpress
