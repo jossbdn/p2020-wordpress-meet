@@ -1,0 +1,14 @@
+<?php
+
+    // ajout des scripts
+
+    function addScripts()
+    {
+        wp_register_style( 'mainStyle', CSS_URL . '/style.css' );
+        wp_register_style( 'materializeStyle', CSS_URL . '/materialize.css' );
+
+        wp_enqueue_style( 'mainStyle' );
+        wp_enqueue_style( 'materializeStyle' );
+    }
+
+    add_action( 'wp_enqueue_scripts', 'addScripts' );
