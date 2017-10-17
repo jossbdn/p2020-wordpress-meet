@@ -1,6 +1,6 @@
 <?php get_header(); //appel du template header.php  ?>
 
-    <div id="content">
+    <main class="container" id="content">
         <h1>Contenu Principal</h1>
         <?php
         // boucle WordPress
@@ -20,6 +20,6 @@
             <?php
         }
         ?>
-    </div> <!-- /content -->
+    </main> <!-- /content -->
 
 <?php get_footer(); //appel du template footer.php ?>

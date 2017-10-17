@@ -12,3 +12,5 @@
     }
 
     add_action( 'wp_enqueue_scripts', 'addScripts' );
+
+    var_dump(CSS_URL);
