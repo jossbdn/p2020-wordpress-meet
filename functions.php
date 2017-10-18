@@ -9,18 +9,14 @@
     define( 'FAVICONS_URL' ,        THEME_URL .    '/assets/favicon'      );
     define( 'ADMIN_IMAGES_URL' ,    IMAGES_URL .   '/admin'             );
 
-    function addScripts()
-    {
-        wp_register_style( 'mainStyle', CSS_URL . '/style.css' );
-        wp_register_style( 'materializeStyle', CSS_URL . '/materialize.css' );
-
-        wp_enqueue_style( 'mainStyle' );
-        wp_enqueue_style( 'materializeStyle' );
-    }
-
-    add_action( 'wp_enqueue_scripts', 'addScripts' );
-
 
     foreach ( glob( THEME_PATH . "/inc/*.php" ) as $file ) {
         include_once $file;
     }
+
+    // Add menu support
+    function register_my_menu() {
+        register_nav_menu('header-menu',__( 'Header Menu' ));
+    }
+
+    add_action( 'init', 'register_my_menu' );
