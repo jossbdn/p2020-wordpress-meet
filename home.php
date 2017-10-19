@@ -2,9 +2,26 @@
 <main>
     <div class="parallax-container row">
         <div class="container">
-            <h1>Trouves ton escalope bien saignante <br> pas de foutaises !</h1>
+            <h1>Trouves ton âme soeur en quelques secondes<br> pas de foutaises !</h1>
         </div>
-        <a class="waves-effect waves-light btn"><i class="material-icons">wc</i> Trouver l'âme soeur</a>
+        <?php
+            $args = array(
+                'post_type' => 'profile',
+                'orderby' => 'rand',
+                'posts_per_page'   => '1'
+            );
+
+            $the_query = new WP_Query( $args );
+
+            if (have_posts()) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+                <a href="<?php the_permalink(); ?>" class="waves-effect waves-light btn" id="randBtn"><i class="material-icons">wc</i> Trouver l'âme soeur</a>
+
+        <?php
+            endwhile;
+            endif;
+        ?>
+
         <!--<div class="parallax">
             <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/background.jpg">
         </div>-->
@@ -40,14 +57,14 @@
                                 <?php   // Get terms for post
                                 $terms = get_the_terms( get_the_id(), 'sexe' );
                                 // Loop over each item since it's an array
-                                if ( $terms != null ){
-                                    foreach( $terms as $term ) { ?>
+                                if ( $terms != null ):
+                                    foreach( $terms as $term ): ?>
 
                                         <div class="chip">
                                             <?php echo $term->name; ?>
                                         </div>
 
-                                <?php } } ?>
+                                <?php endforeach; endif; ?>
                             </div>
                         </div>
                         </a>

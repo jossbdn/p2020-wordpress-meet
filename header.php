@@ -17,7 +17,7 @@
 <header id="header">
     <nav class="#000000 black accent-3 z-depth-0">
         <div class="container nav-wrapper">
-            <a href="#" class="brand-logo" style="font-weight: bold;">meat</a>
+            <a href="<?php echo get_home_url(); ?>" class="brand-logo" style="font-weight: bold;">meat</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <?php wp_nav_menu( array(
                     'menu' => 'header-menu'
