@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<main>
     <div class="parallax-container row">
         <div class="container">
             <h1>Trouves ton âme soeur en quelques secondes<br> pas de foutaises !</h1>
@@ -26,13 +25,17 @@
             <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/background.jpg">
         </div>-->
     </div>
-    <div class="col s12">
         <div class="container">
             <h2>Hommes & Femmes</h2>
         </div>
         <div class="divider"></div>
         <div class="container row">
             <?php
+            if ( is_active_sidebar( 'sidebar-blog' ) ){
+                echo '<div class="col s8">';
+            }else {
+                echo '<div class="col s12">';
+            }
 
             $args = array(
                 'post_type' => 'profile',
@@ -47,7 +50,14 @@
                 while ( $the_query->have_posts() ) {
                     $the_query->the_post();
                     ?>
-                    <div class="col m3">
+                    <?php
+                    if ( is_active_sidebar( 'sidebar-blog' ) ){
+                        echo '<div class="col m4">';
+                    }else {
+                        echo '<div class="col m3">';
+                    }
+                    ?>
+
                         <a href="<?php echo the_permalink(); ?>">
                         <div class="card z-depth-0 waves-effect">
                             <div class="card-image z-depth-2">
@@ -63,7 +73,6 @@
                                         <div class="chip">
                                             <?php echo $term->name; ?>
                                         </div>
-
                                 <?php endforeach; endif; ?>
                             </div>
                         </div>
@@ -77,6 +86,17 @@
                 <?php
             }
             ?>
+</div>
+        <?php
+        if ( is_active_sidebar( 'sidebar-blog' ) ): ?>
+            <div class="col s4">
+                <div class="card z-depth-4 darken-1" style="padding: 15px;">
+                    <ul id="sidebar">
+                        <?php dynamic_sidebar( 'sidebar-blog' ); ?>
+                    </ul>
+                </div>
+            </div>
+        <?php endif; ?>
         </div>
     </div>
 </main>

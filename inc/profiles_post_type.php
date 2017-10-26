@@ -18,7 +18,16 @@
             'has_archive'         => false,
             'query_var'           => true,
             'can_export'          => true,
-            'rewrite'             => array( 'slug' => $post_type )
+            'rewrite'             => array( 'slug' => $post_type ),
+            'capabilities' => array(
+                'edit_post' => 'edit_profile',
+                'edit_posts' => 'edit_profiles',
+                'edit_others_posts' => 'edit_others_profiles',
+                'publish_posts' => 'publish_profiles',
+                'read_post' => 'read_profile',
+                'read_private_posts' => 'read_private_profiles',
+                'delete_post' => 'delete_profile'
+            ),
         );
         register_post_type( 'profile', $args );
     }

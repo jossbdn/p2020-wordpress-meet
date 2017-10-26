@@ -78,3 +78,13 @@ header ul li {
   .card-image .btn-floating {
     z-index: 999;
     border-radius: 0; }
+
+footer {
+  color: black !important; }
+  footer a {
+    color: black; }
+  footer .menuFooter ul {
+    text-align: center; }
+    footer .menuFooter ul li {
+      display: inline-block;
+      margin: 0px 15px; }

@@ -1,7 +1,19 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Josselin
- * Date: 20/10/2017
- * Time: 12:17
+/*
+    Template Name: Page contact
  */
+    get_header();
+
+?>
+
+<main class="container row">
+    <?php if (have_posts()): while( have_posts() ) : the_post(); ?>
+
+        <div class="col s12">
+            <?php the_content(); ?>
+        </div>
+
+    <?php endwhile; endif; ?>
+</main>
+
+<?php get_footer(); ?>

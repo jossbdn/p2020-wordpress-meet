@@ -110,3 +110,26 @@ header {
   }
 }
 
+footer {
+  color: black !important;
+
+  a {
+    color: black;
+  }
+
+  .menuFooter {
+
+    ul {
+      text-align: center;
+
+      li {
+        display: inline-block;
+        margin: 0px 15px;
+      }
+
+    }
+
+  }
+
+}
+

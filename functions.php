@@ -13,10 +13,3 @@
     foreach ( glob( THEME_PATH . "/inc/*.php" ) as $file ) {
         include_once $file;
     }
-
-    // Add menu support
-    function register_my_menu() {
-        register_nav_menu('header-menu',__( 'Header Menu' ));
-    }
-
-    add_action( 'init', 'register_my_menu' );

@@ -19,9 +19,15 @@
         <div class="container nav-wrapper">
             <a href="<?php echo get_home_url(); ?>" class="brand-logo" style="font-weight: bold;">meat</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <?php wp_nav_menu( array(
-                    'menu' => 'header-menu'
-                ) );
+                <?php
+                    $args=array(
+                        'theme_location' => 'header', // nom du slug
+                        'menu' => 'header_fr', // nom à donner cette occurence du menu
+                        'menu_class' => 'menu_header', // class à attribuer au menu
+                        'menu_id' => 'menu_id' // id à attribuer au menu
+                        // voir les autres arguments possibles sur le codex
+                    );
+                    wp_nav_menu($args);
                 ?>
             </ul>
         </div>
